@@ -16,3 +16,11 @@ aside{
 #weatherfivedays::before{
     content: "🌡";
 }
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: inline-block;
+}
