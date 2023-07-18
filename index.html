@@ -17,17 +17,17 @@
     <header class="header h-25 w-100 col-1 text-center mb-2">
         <h1 class="h1content text-white p-2">Weather Dashboard</h1>
     </header>
-    <main class="col-lg-12 row m-0">
+    <main class="col-lg-12 row m-0 w-100">
 
         <aside class="col-lg-3 col-12 col-md-12 bg-white border-dark my-2 mx-auto">
 
             <h3>Search for a city:</h3>
 
-            <form action="submit" class="border-bottom border-gray mb-3 col-lg-12 col-8">
+            <form action="submit" class="border-bottom border-gray mb-1 col-lg-12 col-8">
                 <input type="text" class="textarea col-lg-12 col-12 mb-3 rounded border-dark" placeholder="  Enter a city">
                 <button type="submit" class="text-white bg-info border-0 rounded col-lg-12 col-12 mb-3" id="searchbtn">Search</button>
             </form>
-
+            <p class="text-secondary mb-3">Recent searches:</p>
             <div class="container-aside col-6 col-lg-12" id="recentcitys">
                 <button class="bg-secondary rounded text-center text-white mb-2 col-12 border-0 hide recentcitysearch"></button>
             </div>
@@ -37,16 +37,15 @@
         <section class="col-lg-9 col-12 col-md-12 bg-white mt-3 hide startsearch">
 
             <div id="current-day" class="border border-light bg-info rounded col-10 mx-auto col-lg-10">
-                <h4 class="card-header text-center" id="currentcity">Select a City</h4>
-                  <div class="card-body"> 
-                    <h5 class="card-title text-center"></h5>
-                    <div class="d-flex justify-content-around col-lg-6 mx-auto mt-4">
-                        <p class="card-text">Temperature:</p>
-                        <p class="card-text">Wind:</p>
-                        <p class="card-text">Humidity:</p>
-                    </div>
+                <h4 class="card-header text-center" id="currentcity"></h4>
+                  <div class="card-body text-center"> 
+                        <h5 class="card-title text-center"></h5>
+                        <p class="card-text"></p>
+                        <p class="card-text"></p>
+                        <p class="card-text"></p>
                   </div>
             </div>
+
             <h3 class="col-lg-12 text-center my-3" id="weatherfivedays"> 5 next days forecast</h3>
 
             <div class="row d-flex justify-content-between col-10 mx-auto col-lg-11 dayscontainer">
@@ -56,9 +55,9 @@
                         <h6 class="card-header text-center border-bottom border-3 border-light">Day 1</h6>
                         <div class="card-body">
                           <h5 class="card-title text-center"></h5>
-                          <p class="card-text">Temperature:</p>
-                          <p class="card-text">Wind:</p>
-                          <p class="card-text">Humidity:</p>
+                            <p class="card-text"></p>
+                            <p class="card-text"></p>
+                            <p class="card-text"></p>
                         </div>
                     </div>
                 </div>
