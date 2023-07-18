@@ -1,12 +1,14 @@
+
+
 $(document).ready(function() {
-    // var requestUrl = 'api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid={API key}'
-    //     fetch(requestUrl)
-    //     .then(function(response){
-    //         return response.json();
-    //     })
-    //     .then(function(data){
-    //         console.log(data)
-    //     })
+
+    fetch('api.openweathermap.org/data/2.5/forecast?q=London,us&mode=xml&appid=1cbb0bb3c0dae31a0af54f06954be8f4')
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data)
+    })
 
 
     var btnsearch = $('#searchbtn');
@@ -18,6 +20,7 @@ $(document).ready(function() {
     var flag = 0;
     
     btnsearch.on('click', function(e){
+
         e.preventDefault();
         $('.startsearch').addClass('show')
 
@@ -25,9 +28,6 @@ $(document).ready(function() {
             alert('no data input');
             return;
         }
-        // else if(limitofcities.length > 5){
-        //     $('.recentcitysearch').pop()
-        // }
         
         var newElement =  $('<button>');
         var trimtext = searcharea.val().trim()
@@ -35,18 +35,16 @@ $(document).ready(function() {
         newElement.addClass('bg-secondary rounded text-center text-white mb-2 col-12 border-0 recentcitysearch').text(adjustText);
         recentsearch.prepend(newElement)
         $('#currentcity').text(adjustText + ' now');
+
         if(citynumber < 5){
             localStorage.setItem(citynumber,adjustText)
             citynumber++;
         }else{
-            citynumber = 0; //reset local storage to save the last 5 items.
+            citynumber = 0; 
         }
+
         if(flag > 4){
-            // $('.recentcitysearch').pop()
-            var lastone = $('.recentcitysearch').last().addClass("hide");
-            delete lastone
-            // lastone.addClass("hide")
-            // console.log(lastone)
+            recentsearch.children().last().remove();
         }
         flag++;
     })
@@ -60,13 +58,10 @@ $(document).ready(function() {
     }
 
     cloneDays();
-
-    // function setRecentCities(){
-    //     for(var i=0; i<localStorage.length;i++){
-    //         data = localStorage.getItem(i,data)
-    //         console.localStorage(data)
-    //     }
-    // }
-    // setRecentCities();
     
+
+    // parent.on (delegate target)
+    // recentsearch.on('click', '.recentcitysearch', function(){
+
+    // })
 });
