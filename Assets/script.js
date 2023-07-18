@@ -26,12 +26,16 @@ $(document).ready(function() {
                 $(this).children().eq(3).text("Humidity: " + data.list[i].main.humidity + "%");
             })
 
-        })
+            clouds
+            rain
+            clear 
+            drizzle
+            mist
 
+        })
     }
     
     btnsearch.on('click', function(e){
-
         e.preventDefault();
         $('.startsearch').addClass('show')
 
