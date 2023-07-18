@@ -26,12 +26,6 @@ $(document).ready(function() {
                 $(this).children().eq(3).text("Humidity: " + data.list[i].main.humidity + "%");
             })
 
-            clouds
-            rain
-            clear 
-            drizzle
-            mist
-
         })
     }
     
