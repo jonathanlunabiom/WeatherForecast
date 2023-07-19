@@ -1,9 +1,6 @@
-
-
 $(document).ready(function() {
 
     var btnsearch = $('#searchbtn');
-    var recentsearch = $('.container-aside');
     var searcharea = $('.textarea');
     var dayscontainer = $('.dayscontainer');
     var daystoClone = $('.daytoforecast');
@@ -57,7 +54,7 @@ $(document).ready(function() {
         var newElement =  $('<button>');
         newElement.addClass('bg-secondary rounded text-center text-white mb-2 col-12 border-0 recentcitysearch').text(adjustText);
         sendCurrentCity(adjustText);
-        recentsearch.prepend(newElement)
+        parentCities.prepend(newElement)
     }
     
     btnsearch.on('click', function(e){
@@ -81,24 +78,24 @@ $(document).ready(function() {
             citynumber = 0; 
         }
 
-        if(flag > 4){
-            recentsearch.children().last().remove();
+        if(flag > 2){
+            parentCities.children().last().remove();
         }
         flag++;
     })
 
     function sendCurrentCity(currentcity){
         var Url = 'https://api.openweathermap.org/geo/1.0/direct?q='+ currentcity + ',&limit=5&appid=1cbb0bb3c0dae31a0af54f06954be8f4';
-        $('#currentcity').text(currentcity + ' now');
         fetch(Url)
         .then(function(response){
             return response.json();
         })
         .then(function(data){
             if (data.length !== 0){
+                $('#currentcity').text(currentcity + ' now');
                 setDataLocation(data);
             }else{
-                alert("Error: no city found")
+                $('#currentcity').text('City not found');
             }
         })
     }
@@ -114,6 +111,7 @@ $(document).ready(function() {
     cloneDays();
 
     function currentCityTo(e){
+        $('.startsearch').removeClass('hide')
         var btnclick = $(e.target);
         var  value = btnclick.html();
         sendCurrentCity(value);

@@ -31,3 +31,8 @@ img{
     filter: invert(100%);
         -webkit-filter: invert(100%);
 }
+.recentcitysearch:hover{
+
+    background-color: rgb(61, 61, 61);
+    
+}
