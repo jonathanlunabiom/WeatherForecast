@@ -84,7 +84,7 @@ $(document).ready(function() {
     })
 
     function sendCurrentCity(currentcity){
-        var Url = 'http://api.openweathermap.org/geo/1.0/direct?q='+ currentcity + ',&limit=5&appid=1cbb0bb3c0dae31a0af54f06954be8f4';
+        var Url = 'https://api.openweathermap.org/geo/1.0/direct?q='+ currentcity + ',&limit=5&appid=1cbb0bb3c0dae31a0af54f06954be8f4';
         fetch(Url)
         .then(function(response){
             return response.json();
@@ -107,14 +107,7 @@ $(document).ready(function() {
     }
 
     cloneDays();
-    // console.log($('.card-body'))
 
-    // $('.card-body').each(function setAtributeDays(data){
-    //     var i = 0;
-    //     $(this).children().eq(1).text("Temperature: " + data.list[0].main.temp + " °c");
-    //     $(this).children().eq(2).text("Wind speed: " + data.list[0].wind.speed + " km/h");
-    //     $(this).children().eq(3).text("Humidity: " + data.list[0].main.humidity + "%");
-    //     i++
-    // })
+    // parent.delegate ('click', 'child', function)
 
 });
