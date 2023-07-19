@@ -57,7 +57,7 @@ $(document).ready(function() {
         var newElement =  $('<button>');
         newElement.addClass('bg-secondary rounded text-center text-white mb-2 col-12 border-0 recentcitysearch').text(adjustText);
         sendCurrentCity(adjustText);
-        return newElement;
+        recentsearch.prepend(newElement)
     }
     
     btnsearch.on('click', function(e){
@@ -72,8 +72,7 @@ $(document).ready(function() {
 
         var trimtext = searcharea.val().trim()
         var adjustText = trimtext.charAt(0).toUpperCase() + trimtext.slice(1).toLowerCase();
-        var newElement = createbutton(adjustText);
-        recentsearch.prepend(newElement)
+        createbutton(adjustText);
 
         if(citynumber < 4){
             localStorage.setItem(citynumber,adjustText)
