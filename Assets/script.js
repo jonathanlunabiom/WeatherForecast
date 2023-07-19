@@ -7,6 +7,7 @@ $(document).ready(function() {
     var parentCities = $('#parentcities')
     var citynumber = 0;
     var flag = 0;
+    var clearCities = false;
 
     function setDataLocation(data){
         var lat = data[0].lat
@@ -42,11 +43,9 @@ $(document).ready(function() {
                         icondata[i].src = './Assets/img/drizzle.png'
                     break;
                     default:
-                        icondata[i].src = './Assets/img/clear.png'
+                        icondata[i].src = './Assets/img/no-results.png'
                 }
             })
-
-
         })
     }
     
@@ -96,6 +95,11 @@ $(document).ready(function() {
                 setDataLocation(data);
             }else{
                 $('#currentcity').text('City not found');
+                $('.card-body').each(function(){
+                    $(this).children().eq(1).text('')
+                    $(this).children().eq(2).text('')
+                    $(this).children().eq(3).text('')
+                })
             }
         })
     }
