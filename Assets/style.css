@@ -24,3 +24,10 @@ aside{
 .show{
     display: inline-block;
 }
+
+img{
+    width: 3rem;
+    color: azure;
+    filter: invert(100%);
+        -webkit-filter: invert(100%);
+}

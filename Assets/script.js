@@ -24,7 +24,31 @@ $(document).ready(function() {
                 $(this).children().eq(1).text("Temperature: " + data.list[i].main.temp + " °c");
                 $(this).children().eq(2).text("Wind speed: " + data.list[i].wind.speed + " km/h");
                 $(this).children().eq(3).text("Humidity: " + data.list[i].main.humidity + "%");
+
+                var icondata = $('.iconweather');
+                var weather = data.list[i].weather[0].main;
+
+                switch (weather){
+                    case 'Clouds':
+                        icondata[i].src = './Assets/img/clouds.png'
+                    break;
+                    case 'Clear':
+                        icondata[i].src = './Assets/img/clear.png'
+                    break;
+                    case 'Mist':
+                        icondata[i].src = './Assets/img/wind.png'
+                    break;
+                    case 'Rain':
+                        icondata[i].src = './Assets/img/rain.png'
+                    break;
+                    case 'Drizzle':
+                        icondata[i].src = './Assets/img/drizzle.png'
+                    break;
+                    default:
+                        icondata[i].src = './Assets/img/clear.png'
+                }
             })
+
 
         })
     }
